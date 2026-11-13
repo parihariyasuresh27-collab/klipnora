@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Klipnora - Create, Edit and Publish amazing videos with AI.">
+
+    <title>Klipnora - Create. Edit. Publish.</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+    <style>
+        /* NAVIGATION BAR STYLING */
+
+        header nav a {
+            color: #d1d1dc;
+            font-weight: 700;
+            text-decoration: none;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #a78bfa;
+        }
+
+        header nav a.active {
+            color: #a78bfa;
+            border-bottom-color: #a78bfa;
+        }
+
+        /* KLIPNORA LOGO STYLING */
+
+        header .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #c4b5fd, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.25));
+        }
+
+        /* LOGIN TAB HIGHLIGHT */
+
+        header nav a[href="auth/login.html"] {
+            color: #ffffff;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            padding: 9px 18px;
+            border: 1px solid #a78bfa;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+        }
+
+        header nav a[href="auth/login.html"]:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Klipnora.</div>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="auth/login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="tag">
+                ✦ Your All-in-One AI Video Studio
+            </div>
+
+            <h1>
+                Create Videos.<br>
+                <span>Make An Impact.</span>
+            </h1>
+
+            <p>
+                Turn your ideas and long videos into engaging content.
+                Create, edit and publish amazing videos with Klipnora.
+                Your creative journey starts here.
+            </p>
+
+            <div class="buttons">
+
+                <a href="auth/register.html" class="btn primary">
+                    Start Creating →
+                </a>
+
+                <a href="#features" class="btn secondary">
+                    Explore Features
+                </a>
+
+            </div>
+
+        </section>
+
+        <section id="features">
+
+            <h2 class="section-title">
+                Everything You Need
+            </h2>
+
+            <p class="section-description">
+                Powerful video creation tools, all in one place.
+            </p>
+
+            <div class="features">
+
+                <div class="feature-card">
+                    <div class="icon">🎬</div>
+                    <h3>AI Clip Generator</h3>
+                    <p>Transform long videos into short, engaging clips.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">✂️</div>
+                    <h3>Smart Video Editor</h3>
+                    <p>Trim, cut, merge and improve your videos easily.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>Auto Captions</h3>
+                    <p>Create subtitles in Hindi, English and Hinglish.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>Caption Studio</h3>
+                    <p>Customize fonts, colours, animations and styles.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Video Resizer</h3>
+                    <p>Resize videos for YouTube, Instagram and more.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>AI Content Assistant</h3>
+                    <p>Generate creative titles, descriptions and hashtags.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cta">
+
+            <h2>Your Next Great Video Starts Here.</h2>
+
+            <p>Create. Edit. Publish. Everything with Klipnora.</p>
+
+            <a href="auth/register.html" class="btn primary">
+                Get Started →
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Klipnora. All rights reserved.
+        <br><br>
+        Create. Edit. Publish.
+    </footer>
+
+</body>
+</html>

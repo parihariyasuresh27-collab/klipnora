@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Verify your Klipnora account with OTP.">
+
+    <title>OTP Verification - Klipnora</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        header nav a {
+            color: #d1d1dc;
+            font-weight: 700;
+            text-decoration: none;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #a78bfa;
+        }
+
+        header nav a.active {
+            color: #a78bfa;
+            border-bottom-color: #a78bfa;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #c4b5fd, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.25));
+        }
+
+        header nav a[href="login.html"] {
+            color: #ffffff;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            padding: 9px 18px;
+            border: 1px solid #a78bfa;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+        }
+
+        header nav a[href="login.html"]:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+        }
+
+        .otp-section {
+            min-height: 75vh;
+            padding: 70px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(
+                ellipse at top,
+                #291849 0%,
+                #11101c 45%,
+                #09090f 100%
+            );
+        }
+
+        .otp-container {
+            width: 100%;
+            max-width: 440px;
+            padding: 40px;
+            background: #151520;
+            border: 1px solid #353047;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .otp-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .otp-heading h1 {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .otp-heading p {
+            color: #9999aa;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .otp-input {
+            width: 100%;
+            padding: 16px;
+            background: #0d0d16;
+            color: #ffffff;
+            border: 1px solid #353547;
+            border-radius: 9px;
+            outline: none;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 12px;
+            text-align: center;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        .otp-input:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+        }
+
+        .otp-help {
+            color: #9999aa;
+            font-size: 12px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .otp-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #ffffff;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .otp-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(139, 92, 246, 0.3);
+        }
+
+        .resend-text {
+            margin-top: 25px;
+            color: #9999aa;
+            font-size: 14px;
+        }
+
+        .resend-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 0;
+            background: none;
+            border: none;
+            color: #a78bfa;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .resend-button:hover {
+            color: #c4b5fd;
+        }
+
+        .otp-message {
+            display: none;
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #c4b5fd;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .back-login {
+            display: block;
+            margin-top: 25px;
+            color: #a78bfa;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back-login:hover {
+            color: #c4b5fd;
+        }
+
+        @media (max-width: 768px) {
+            .otp-container {
+                padding: 30px 22px;
+            }
+
+            .otp-heading h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Klipnora.</div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../features.html">Features</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+            <a href="login.html" class="active">Login</a>
+        </nav>
+    </header>
+
+    <section class="otp-section">
+
+        <div class="otp-container">
+
+            <div class="otp-icon">✉️</div>
+
+            <div class="otp-heading">
+                <h1>Verify OTP</h1>
+
+                <p>
+                    Enter the 6-digit verification code sent to
+                    your registered email address or mobile number.
+                </p>
+            </div>
+
+            <form id="otp-form">
+
+                <input
+                    type="text"
+                    id="otp"
+                    name="otp"
+                    class="otp-input"
+                    placeholder="000000"
+                    maxlength="6"
+                    inputmode="numeric"
+                    pattern="[0-9]{6}"
+                    autocomplete="one-time-code"
+                    aria-label="Six digit OTP"
+                    required
+                >
+
+                <p class="otp-help">
+                    Please enter your 6-digit OTP.
+                </p>
+
+                <button type="submit" class="otp-submit">
+                    Verify OTP
+                </button>
+
+            </form>
+
+            <div class="resend-text">
+                Didn't receive the code?
+            </div>
+
+            <button type="button" class="resend-button" id="resend-otp">
+                Resend OTP
+            </button>
+
+            <div class="otp-message" id="otp-message" role="status"></div>
+
+            <a href="login.html" class="back-login">
+                ← Back to Login
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="current-year"></span> Klipnora.
+                All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+
+        const otpForm = document.getElementById("otp-form");
+        const otpInput = document.getElementById("otp");
+        const otpMessage = document.getElementById("otp-message");
+        const resendButton = document.getElementById("resend-otp");
+
+        // CHECK WHICH FLOW OPENED THE OTP PAGE
+        const params = new URLSearchParams(window.location.search);
+        const flow = params.get("flow");
+
+        otpInput.addEventListener("input", function() {
+            this.value = this.value.replace(/[^0-9]/g, "").slice(0, 6);
+        });
+
+        otpForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            otpMessage.style.display = "block";
+
+            if (!/^[0-9]{6}$/.test(otpInput.value)) {
+
+                otpMessage.textContent =
+                    "Please enter a valid 6-digit OTP.";
+
+                return;
+
+            }
+
+            /*
+              FRONTEND DEMO ONLY
+
+              This does not verify a real OTP.
+              Actual OTP verification will be added
+              during backend development.
+            */
+
+            if (flow === "reset") {
+
+                otpMessage.textContent =
+                    "Demo only: OTP format accepted. Opening Reset Password page...";
+
+            } else {
+
+                otpMessage.textContent =
+                    "Demo only: OTP format accepted. Opening Login page...";
+
+            }
+
+            setTimeout(function() {
+
+                if (flow === "reset") {
+
+                    window.location.href = "reset-password.html";
+
+                } else {
+
+                    window.location.href = "login.html";
+
+                }
+
+            }, 1500);
+
+        });
+
+        resendButton.addEventListener("click", function() {
+
+            otpMessage.style.display = "block";
+
+            otpMessage.textContent =
+                "Resend OTP will be activated during backend development.";
+
+        });
+
+    </script>
+
+</body>
+</html>

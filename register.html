@@ -1,0 +1,394 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Create your Klipnora account.">
+
+    <title>Create Account - Klipnora</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* STANDARD KLIPNORA NAVIGATION */
+
+        header nav a {
+            color: #d1d1dc;
+            font-weight: 700;
+            text-decoration: none;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #a78bfa;
+        }
+
+        header nav a.active {
+            color: #a78bfa;
+            border-bottom-color: #a78bfa;
+        }
+
+        /* KLIPNORA LOGO */
+
+        header .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #c4b5fd, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.25));
+        }
+
+        /* LOGIN TAB HIGHLIGHT */
+
+        header nav a[href="login.html"] {
+            color: #ffffff;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            padding: 9px 18px;
+            border: 1px solid #a78bfa;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+        }
+
+        header nav a[href="login.html"]:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+        }
+
+        /* REGISTER PAGE */
+
+        .register-section {
+            min-height: 75vh;
+            padding: 70px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(
+                ellipse at top,
+                #291849 0%,
+                #11101c 45%,
+                #09090f 100%
+            );
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 460px;
+            padding: 40px;
+            background: #151520;
+            border: 1px solid #353047;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .register-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-heading h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .register-heading p {
+            color: #9999aa;
+            font-size: 15px;
+        }
+
+        .register-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .register-form label {
+            display: block;
+            margin-bottom: 9px;
+            color: #e2e2ec;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 14px 15px;
+            background: #0d0d16;
+            color: #ffffff;
+            border: 1px solid #353547;
+            border-radius: 9px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s ease;
+        }
+
+        .register-form input:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+        }
+
+        .register-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #ffffff;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .register-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(139, 92, 246, 0.3);
+        }
+
+        .register-login-text {
+            text-align: center;
+            margin-top: 26px;
+            color: #9999aa;
+            font-size: 14px;
+        }
+
+        .register-login-text a {
+            color: #a78bfa;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .register-login-text a:hover {
+            color: #c4b5fd;
+        }
+
+        .register-message {
+            display: none;
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #c4b5fd;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .register-container {
+                padding: 30px 22px;
+            }
+
+            .register-heading h1 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+
+    <header>
+
+        <div class="logo">Klipnora.</div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../features.html">Features</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+            <a href="login.html" class="active">Login</a>
+        </nav>
+
+    </header>
+
+
+    <!-- REGISTER SECTION -->
+
+    <section class="register-section">
+
+        <div class="register-container">
+
+            <div class="register-heading">
+
+                <h1>Create <span>Account.</span></h1>
+
+                <p>
+                    Join Klipnora and start your creative journey.
+                </p>
+
+            </div>
+
+
+            <form class="register-form" id="register-form">
+
+                <div class="form-group">
+
+                    <label for="fullName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mobile">Mobile Number</label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter your mobile number"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Enter your password again"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="register-submit">
+                    Create Account
+                </button>
+
+
+                <div class="register-message" id="register-message"></div>
+
+            </form>
+
+
+            <p class="register-login-text">
+
+                Already have an account?
+
+                <a href="login.html">Login</a>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="current-year"></span> Klipnora.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+
+
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            const message = document.getElementById("register-message");
+
+            message.style.display = "block";
+
+            if (password !== confirmPassword) {
+
+                message.textContent = "Passwords do not match. Please check again.";
+
+                return;
+
+            }
+
+            // FRONTEND DEMO: OPEN OTP VERIFICATION PAGE
+
+            window.location.href = "verify-otp.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>
